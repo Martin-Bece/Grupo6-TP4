@@ -7,15 +7,15 @@ import javax.swing.JOptionPane;
  *
  * @author Celi Leandro
  */
-public class FormualrioMateria extends javax.swing.JInternalFrame {
+public class FormularioMateria extends javax.swing.JInternalFrame {
 
     private HashSet<Materia> materias;
     private Materia materia;
     
-    public FormualrioMateria() {
+    public FormularioMateria() {
         initComponents();
     }
-    public FormualrioMateria(HashSet<Materia> mat) {
+    public FormularioMateria(HashSet<Materia> mat) {
         initComponents();
         this.materias = mat;
     }
@@ -36,7 +36,7 @@ public class FormualrioMateria extends javax.swing.JInternalFrame {
         jTFnombreMateria = new javax.swing.JTextField();
         jTFanioMateria = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        NuevoMateria = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -52,7 +52,12 @@ public class FormualrioMateria extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("Nuevo");
+        NuevoMateria.setText("Nuevo");
+        NuevoMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NuevoMateriaActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Guardar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +96,7 @@ public class FormualrioMateria extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
+                                .addComponent(NuevoMateria)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1)))))
                 .addContainerGap(35, Short.MAX_VALUE))
@@ -116,7 +121,7 @@ public class FormualrioMateria extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(NuevoMateria)
                     .addComponent(jButton3))
                 .addGap(29, 29, 29))
         );
@@ -136,15 +141,21 @@ public class FormualrioMateria extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(this, "La Materia fue agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Complete lo campos ", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Complete los campos ", "Advertencia", JOptionPane.WARNING_MESSAGE);
 
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void NuevoMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoMateriaActionPerformed
+        jTFanioMateria.setText("");
+        jTFnombreMateria.setText("");
+        jTfcodMateria.setText("");
+    }//GEN-LAST:event_NuevoMateriaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton NuevoMateria;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

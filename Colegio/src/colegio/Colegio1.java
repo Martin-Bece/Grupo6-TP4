@@ -10,6 +10,7 @@ public class Colegio1 extends javax.swing.JFrame {
 
 
     public static HashSet<Alumno> alumno = new HashSet<>();
+    public static HashSet<Materia> materia = new HashSet<>();
     
     public Colegio1() {
         initComponents();
@@ -27,11 +28,11 @@ public class Colegio1 extends javax.swing.JFrame {
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        AlumnoMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MateriaMenu = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        InscripcionMenu = new javax.swing.JMenuItem();
         SalirInscripcion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,27 +51,37 @@ public class Colegio1 extends javax.swing.JFrame {
 
         jMenu1.setText("Alumno");
 
-        jMenuItem1.setText("Agregar Alumno");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        AlumnoMenu.setText("Agregar Alumno");
+        AlumnoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                AlumnoMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(AlumnoMenu);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Materia");
 
-        jMenuItem2.setText("Agregar Materia");
-        jMenu2.add(jMenuItem2);
+        MateriaMenu.setText("Agregar Materia");
+        MateriaMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MateriaMenuActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MateriaMenu);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Registro");
 
-        jMenuItem3.setText("Inscripciones");
-        jMenu3.add(jMenuItem3);
+        InscripcionMenu.setText("Inscripciones");
+        InscripcionMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InscripcionMenuActionPerformed(evt);
+            }
+        });
+        jMenu3.add(InscripcionMenu);
 
         jMenuBar1.add(jMenu3);
 
@@ -99,15 +110,27 @@ public class Colegio1 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void AlumnoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnoMenuActionPerformed
         FormularioAlumno formA = new FormularioAlumno(alumno);
         Escritorio.add(formA);
         formA.setVisible(rootPaneCheckingEnabled);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_AlumnoMenuActionPerformed
 
     private void SalirInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirInscripcionActionPerformed
         this.dispose();
     }//GEN-LAST:event_SalirInscripcionActionPerformed
+
+    private void MateriaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriaMenuActionPerformed
+        FormularioMateria formM = new FormularioMateria(materia);
+        Escritorio.add(formM);
+        formM.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_MateriaMenuActionPerformed
+
+    private void InscripcionMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscripcionMenuActionPerformed
+        Registros regi = new Registros();
+        Escritorio.add(regi);
+        regi.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_InscripcionMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,14 +168,14 @@ public class Colegio1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AlumnoMenu;
     private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JMenuItem InscripcionMenu;
+    private javax.swing.JMenuItem MateriaMenu;
     private javax.swing.JMenu SalirInscripcion;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
