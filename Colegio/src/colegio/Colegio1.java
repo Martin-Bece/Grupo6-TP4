@@ -5,15 +5,12 @@
  */
 package colegio;
 
-/**
- *
- * @author Mila
- */
+import java.util.HashSet;
 public class Colegio1 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Colegio1
-     */
+
+    public static HashSet<Alumno> alumno = new HashSet<>();
+    
     public Colegio1() {
         initComponents();
     }
@@ -103,7 +100,7 @@ public class Colegio1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        FormularioAlumno formA = new FormularioAlumno();
+        FormularioAlumno formA = new FormularioAlumno(alumno);
         Escritorio.add(formA);
         formA.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_jMenuItem1ActionPerformed

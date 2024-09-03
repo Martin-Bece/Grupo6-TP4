@@ -5,6 +5,7 @@
  */
 package colegio;
 
+import static colegio.Colegio1.alumno;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
 
@@ -15,15 +16,15 @@ import javax.swing.JOptionPane;
  */
 public class FormularioAlumno extends javax.swing.JInternalFrame {
 
-    private HashSet<Alumno> alumno;
+    private HashSet<Alumno> alumno2;
     public FormularioAlumno() {
         initComponents();
         
     }
     
-    public FormularioAlumno(HashSet<Alumno> alumno){
+    public FormularioAlumno(HashSet<Alumno> alumno2){
         initComponents();
-        this.alumno = alumno;
+        this.alumno2 = alumno2;
     }
 
     /**
@@ -187,7 +188,8 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         Integer legajo = Integer.parseInt(LegajoAlumno.getText());
         Alumno a1 = new Alumno(legajo,ApellidoAlumno.getText(),NombreAlumno.getText());
         alumno.add(a1);
-        }catch (Exception e){
+        JOptionPane.showMessageDialog(this, "El Alumno fue agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(this, "Datos Incorrectos");
         }
     }//GEN-LAST:event_GuardarAlumnoActionPerformed
