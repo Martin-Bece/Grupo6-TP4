@@ -1,21 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package colegio;
 
-/**
- *
- * @author Usuario
- */
 public class Colegio {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Materia Laboratorio = new Materia(10,"Laboratorio",1);
+        Materia Matemática = new Materia(11,"Matemáticas",1);
+        Materia Inglés = new Materia(12,"Ingles I",1);
+        
+        Alumno a1 = new Alumno(1001,"Lopez","Martín");
+        Alumno a2 = new Alumno(1001,"Martínez","Brenda");
+        
+        a1.agregarMateria(Inglés);
+        a1.agregarMateria(Laboratorio);
+        a1.agregarMateria(Matemática);
+        a2.agregarMateria(Inglés);
+        a2.agregarMateria(Matemática);
+        a2.agregarMateria(Laboratorio);
+        a2.agregarMateria(Laboratorio);
+        
+        System.out.println("Cantidad de materias de López: "+a1.cantidadMaterias());
+        System.out.println("Cantidad de materias de Martínez: "+a2.cantidadMaterias());
     }
     
 }

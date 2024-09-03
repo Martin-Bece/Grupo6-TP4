@@ -3,17 +3,13 @@ package colegio;
 
 import java.util.HashSet;
 
-/**
- *
- * @author Celi Leandro
- */
 public class Alumno 
 {
     private int legajo;
     private String apellido;
     private String nombre;
     
-    private HashSet<Materia> contenedor;
+    private HashSet<Materia> contenedor = new HashSet();
    
 
     public Alumno(int legajo, String apellido, String nombre) {
@@ -55,5 +51,32 @@ public class Alumno
     {
        return contenedor.size();    
     }
-            
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + this.legajo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        if (this.legajo != other.legajo) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
 }
