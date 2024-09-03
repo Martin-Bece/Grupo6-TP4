@@ -90,6 +90,9 @@ public class Registros extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_ComboMateriaActionPerformed
 
+    public void cargarCombo(){
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboAlumno;
@@ -99,3 +102,4 @@ public class Registros extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
+
