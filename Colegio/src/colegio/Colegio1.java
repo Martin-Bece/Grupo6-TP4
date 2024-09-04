@@ -37,18 +37,20 @@ public class Colegio1 extends javax.swing.JFrame {
         InscripcionMenu = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         AlumnosInscriptosMenu = new javax.swing.JMenuItem();
-        SalirInscripcion = new javax.swing.JMenu();
+        SalirEscritorio = new javax.swing.JMenu();
 
         jMenu4.setText("jMenu4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INSCRIPCION");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 631, Short.MAX_VALUE)
+            .addGap(0, 634, Short.MAX_VALUE)
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,13 +105,13 @@ public class Colegio1 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        SalirInscripcion.setText("Salir");
-        SalirInscripcion.addActionListener(new java.awt.event.ActionListener() {
+        SalirEscritorio.setText("Salir");
+        SalirEscritorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirInscripcionActionPerformed(evt);
+                SalirEscritorioActionPerformed(evt);
             }
         });
-        jMenuBar1.add(SalirInscripcion);
+        jMenuBar1.add(SalirEscritorio);
 
         setJMenuBar(jMenuBar1);
 
@@ -134,9 +136,9 @@ public class Colegio1 extends javax.swing.JFrame {
         formA.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_AlumnoMenuActionPerformed
 
-    private void SalirInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirInscripcionActionPerformed
-        
-    }//GEN-LAST:event_SalirInscripcionActionPerformed
+    private void SalirEscritorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirEscritorioActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_SalirEscritorioActionPerformed
 
     private void MateriaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriaMenuActionPerformed
         FormularioMateria formM = new FormularioMateria(materia);
@@ -197,7 +199,7 @@ public class Colegio1 extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuItem InscripcionMenu;
     private javax.swing.JMenuItem MateriaMenu;
-    private javax.swing.JMenu SalirInscripcion;
+    private javax.swing.JMenu SalirEscritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
