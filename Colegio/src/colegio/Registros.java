@@ -16,6 +16,8 @@ public class Registros extends javax.swing.JInternalFrame {
      */
     public Registros() {
         initComponents();
+        cargarComboMateria();
+        cargarComboAlumno();
     }
 
     /**
@@ -90,12 +92,20 @@ public class Registros extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_ComboMateriaActionPerformed
 
-    public void cargarCombo(){
-        
+    public void cargarComboMateria(){
+        for (Object aux : FormularioMateria.materias) {
+            ComboMateria.addItem((Materia)aux);
+        }
+    }
+    
+    public void cargarComboAlumno(){
+        for (Object aux : FormularioAlumno.alumno2) {
+            ComboAlumno.addItem((Alumno)aux);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboAlumno;
+    private javax.swing.JComboBox<Alumno> ComboAlumno;
     private javax.swing.JComboBox<Materia> ComboMateria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

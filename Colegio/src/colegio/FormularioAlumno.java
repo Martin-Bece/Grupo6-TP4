@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class FormularioAlumno extends javax.swing.JInternalFrame {
 
-    private HashSet<Alumno> alumno2;
+    public static HashSet<Alumno> alumno2;
     public FormularioAlumno() {
         initComponents();
         

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  */
 public class FormularioMateria extends javax.swing.JInternalFrame {
 
-    private HashSet<Materia> materias;
+    public static HashSet<Materia> materias;
     private Materia materia;
     
     public FormularioMateria() {

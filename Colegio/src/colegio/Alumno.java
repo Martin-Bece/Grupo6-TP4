@@ -76,6 +76,11 @@ public class Alumno
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return legajo + ", " + apellido + " " + nombre;
+    }
     
     
     
