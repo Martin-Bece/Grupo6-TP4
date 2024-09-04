@@ -11,17 +11,17 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
 
     public static HashSet<Materia> materias;
     private Materia materia;
-    
+
     public FormularioMateria() {
         initComponents();
     }
+
     public FormularioMateria(HashSet<Materia> mat) {
         initComponents();
         this.materias = mat;
     }
-    
-    public boolean chequeo() 
-    {
+
+    public boolean chequeo() {
         return (jTfcodMateria.getText().isEmpty() || jTFnombreMateria.getText().isEmpty() || jTFanioMateria.getText().isEmpty());
 
     }
@@ -44,6 +44,18 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         jLabel3.setText("NOMBRE DE MATERIA:");
 
         jLabel4.setText("AÑO DE LA MATERIA:");
+
+        jTfcodMateria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTfcodMateriaKeyTyped(evt);
+            }
+        });
+
+        jTFanioMateria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTFanioMateriaKeyTyped(evt);
+            }
+        });
 
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +163,20 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         jTFnombreMateria.setText("");
         jTfcodMateria.setText("");
     }//GEN-LAST:event_NuevoMateriaActionPerformed
+
+    private void jTfcodMateriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTfcodMateriaKeyTyped
+        char car = evt.getKeyChar();
+        if (!Character.isDigit(car)) {
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jTfcodMateriaKeyTyped
+
+    private void jTFanioMateriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFanioMateriaKeyTyped
+         char car = evt.getKeyChar();
+        if (!Character.isDigit(car)) {
+            evt.consume();
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jTFanioMateriaKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

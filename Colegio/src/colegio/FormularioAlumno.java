@@ -6,9 +6,11 @@
 package colegio;
 
 import static colegio.Colegio1.alumno;
+import com.sun.xml.internal.bind.v2.model.core.Adapter;
+import java.awt.event.KeyAdapter;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
-
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,12 +19,13 @@ import javax.swing.JOptionPane;
 public class FormularioAlumno extends javax.swing.JInternalFrame {
 
     public static HashSet<Alumno> alumno2;
+
     public FormularioAlumno() {
         initComponents();
-        
+
     }
-    
-    public FormularioAlumno(HashSet<Alumno> alumno2){
+
+    public FormularioAlumno(HashSet<Alumno> alumno2) {
         initComponents();
         this.alumno2 = alumno2;
     }
@@ -78,6 +81,11 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         LegajoAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LegajoAlumnoActionPerformed(evt);
+            }
+        });
+        LegajoAlumno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                LegajoAlumnoKeyTyped(evt);
             }
         });
 
@@ -169,7 +177,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_NombreAlumnoActionPerformed
 
     private void LegajoAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LegajoAlumnoActionPerformed
-        
+
     }//GEN-LAST:event_LegajoAlumnoActionPerformed
 
     private void SalirAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirAlumnoActionPerformed
@@ -181,18 +189,35 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         ApellidoAlumno.setText("");
         NombreAlumno.setText("");
     }//GEN-LAST:event_NuevoAlumnoActionPerformed
+    public boolean chequeo() {
+        return (LegajoAlumno.getText().isEmpty() || ApellidoAlumno.getText().isEmpty() || NombreAlumno.getText().isEmpty());
 
+    }
     private void GuardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarAlumnoActionPerformed
-        
-        try{
-        Integer legajo = Integer.parseInt(LegajoAlumno.getText());
-        Alumno a1 = new Alumno(legajo,ApellidoAlumno.getText(),NombreAlumno.getText());
-        alumno.add(a1);
-        JOptionPane.showMessageDialog(this, "El Alumno fue agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "Datos Incorrectos");
+
+        if (!chequeo()) {
+            try {
+                Integer legajo = Integer.parseInt(LegajoAlumno.getText());
+                Alumno a1 = new Alumno(legajo, ApellidoAlumno.getText(), NombreAlumno.getText());
+                alumno.add(a1);
+                JOptionPane.showMessageDialog(this, "El Alumno fue agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Datos Incorrectos");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Complete los campos ", "Advertencia", JOptionPane.WARNING_MESSAGE);
+
         }
+
     }//GEN-LAST:event_GuardarAlumnoActionPerformed
+
+    private void LegajoAlumnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LegajoAlumnoKeyTyped
+        char car = evt.getKeyChar();
+        if (!Character.isDigit(car)) {
+            evt.consume();
+        }
+
+    }//GEN-LAST:event_LegajoAlumnoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

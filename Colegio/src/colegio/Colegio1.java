@@ -7,12 +7,13 @@ package colegio;
 
 import java.util.HashSet;
 import javax.swing.JFrame;
-public class Colegio1 extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
 
+public class Colegio1 extends javax.swing.JFrame {
 
     public static HashSet<Alumno> alumno = new HashSet<>();
     public static HashSet<Materia> materia = new HashSet<>();
-    
+
     public Colegio1() {
         initComponents();
     }
@@ -137,7 +138,7 @@ public class Colegio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_AlumnoMenuActionPerformed
 
     private void SalirEscritorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirEscritorioActionPerformed
-        System.exit(0);
+       System.exit(0);      
     }//GEN-LAST:event_SalirEscritorioActionPerformed
 
     private void MateriaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriaMenuActionPerformed
@@ -147,15 +148,32 @@ public class Colegio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_MateriaMenuActionPerformed
 
     private void InscripcionMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InscripcionMenuActionPerformed
-        Registros regi = new Registros();
-        Escritorio.add(regi);
-        regi.setVisible(rootPaneCheckingEnabled);
+        if (!alumno.isEmpty() || !materia.isEmpty()) {
+            Registros regi = new Registros();
+            Escritorio.add(regi);
+            regi.setVisible(rootPaneCheckingEnabled);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "No hay Registro de alumnos o de materias Cargados ", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_InscripcionMenuActionPerformed
 
     private void AlumnosInscriptosMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosInscriptosMenuActionPerformed
-        AlumnosInscriptos ai = new AlumnosInscriptos();
+        
+        if (!alumno.isEmpty() || !materia.isEmpty()) {
+         AlumnosInscriptos ai = new AlumnosInscriptos();
         Escritorio.add(ai);
         ai.setVisible(rootPaneCheckingEnabled);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "No hay inscriptos cargados ", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        
     }//GEN-LAST:event_AlumnosInscriptosMenuActionPerformed
 
     /**
