@@ -6,6 +6,7 @@
 package colegio;
 
 import java.util.HashSet;
+import javax.swing.JFrame;
 public class Colegio1 extends javax.swing.JFrame {
 
 
@@ -134,7 +135,7 @@ public class Colegio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_AlumnoMenuActionPerformed
 
     private void SalirInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirInscripcionActionPerformed
-        this.dispose();
+        
     }//GEN-LAST:event_SalirInscripcionActionPerformed
 
     private void MateriaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriaMenuActionPerformed

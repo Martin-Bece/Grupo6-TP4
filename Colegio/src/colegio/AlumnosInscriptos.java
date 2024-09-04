@@ -5,6 +5,7 @@
  */
 package colegio;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,6 +18,7 @@ public class AlumnosInscriptos extends javax.swing.JInternalFrame {
      * Creates new form AlumnosInscriptos
      */
     private DefaultTableModel model = new DefaultTableModel();
+    
     public AlumnosInscriptos() {
         initComponents();
         cargarCombo();
@@ -116,7 +118,8 @@ public class AlumnosInscriptos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComboAlumnosInscriptosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAlumnosInscriptosActionPerformed
-        TablaInscriptos.removeAll();
+
+        model.setRowCount(0);
         Alumno alu = (Alumno)ComboAlumnosInscriptos.getSelectedItem();
         for (Materia aux : alu.contenedor) {
             cargarMaterias(aux);
