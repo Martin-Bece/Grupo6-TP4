@@ -25,6 +25,7 @@ public class Colegio1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu4 = new javax.swing.JMenu();
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -33,7 +34,11 @@ public class Colegio1 extends javax.swing.JFrame {
         MateriaMenu = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         InscripcionMenu = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        AlumnosInscriptosMenu = new javax.swing.JMenuItem();
         SalirInscripcion = new javax.swing.JMenu();
+
+        jMenu4.setText("jMenu4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INSCRIPCION");
@@ -85,6 +90,18 @@ public class Colegio1 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu5.setText("Alumnos Inscriptos");
+
+        AlumnosInscriptosMenu.setText("Inscriptos");
+        AlumnosInscriptosMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlumnosInscriptosMenuActionPerformed(evt);
+            }
+        });
+        jMenu5.add(AlumnosInscriptosMenu);
+
+        jMenuBar1.add(jMenu5);
+
         SalirInscripcion.setText("Salir");
         SalirInscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +149,12 @@ public class Colegio1 extends javax.swing.JFrame {
         regi.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_InscripcionMenuActionPerformed
 
+    private void AlumnosInscriptosMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosInscriptosMenuActionPerformed
+        AlumnosInscriptos ai = new AlumnosInscriptos();
+        Escritorio.add(ai);
+        ai.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_AlumnosInscriptosMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -169,6 +192,7 @@ public class Colegio1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AlumnoMenu;
+    private javax.swing.JMenuItem AlumnosInscriptosMenu;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuItem InscripcionMenu;
     private javax.swing.JMenuItem MateriaMenu;
@@ -176,6 +200,8 @@ public class Colegio1 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
