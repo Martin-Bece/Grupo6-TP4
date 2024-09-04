@@ -5,6 +5,8 @@
  */
 package colegio;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mila
@@ -34,8 +36,8 @@ public class Registros extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         ComboMateria = new javax.swing.JComboBox<>();
         ComboAlumno = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jbInscribir = new javax.swing.JButton();
+        SalirInscripcion = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Formulario de Inscripcion");
@@ -52,12 +54,17 @@ public class Registros extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Inscribir");
-
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbInscribir.setText("Inscribir");
+        jbInscribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbInscribirActionPerformed(evt);
+            }
+        });
+
+        SalirInscripcion.setText("Salir");
+        SalirInscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirInscripcionActionPerformed(evt);
             }
         });
 
@@ -82,9 +89,9 @@ public class Registros extends javax.swing.JInternalFrame {
                 .addContainerGap(124, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jbInscribir)
                 .addGap(38, 38, 38)
-                .addComponent(jButton2)
+                .addComponent(SalirInscripcion)
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
@@ -101,8 +108,8 @@ public class Registros extends javax.swing.JInternalFrame {
                     .addComponent(ComboAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jbInscribir)
+                    .addComponent(SalirInscripcion))
                 .addGap(44, 44, 44))
         );
 
@@ -113,9 +120,15 @@ public class Registros extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_ComboMateriaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void SalirInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirInscripcionActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_SalirInscripcionActionPerformed
+
+    private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
+        Alumno alumnoInscripto = (Alumno)ComboAlumno.getSelectedItem();
+        alumnoInscripto.agregarMateria((Materia)ComboMateria.getSelectedItem());
+        JOptionPane.showMessageDialog(this, "Se ha inscripto al alumno con exito", "Felcidades", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jbInscribirActionPerformed
 
     public void cargarComboMateria(){
         for (Object aux : FormularioMateria.materias) {
@@ -132,11 +145,11 @@ public class Registros extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<Alumno> ComboAlumno;
     private javax.swing.JComboBox<Materia> ComboMateria;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton SalirInscripcion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jbInscribir;
     // End of variables declaration//GEN-END:variables
 }
 
