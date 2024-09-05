@@ -107,6 +107,11 @@ public class Colegio1 extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         SalirEscritorio.setText("Salir");
+        SalirEscritorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirEscritorioMouseClicked(evt);
+            }
+        });
         SalirEscritorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirEscritorioActionPerformed(evt);
@@ -175,6 +180,17 @@ public class Colegio1 extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_AlumnosInscriptosMenuActionPerformed
+
+    private void SalirEscritorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirEscritorioMouseClicked
+    
+  int repuesta =  JOptionPane.showConfirmDialog(this, "Esta seguro de Salir ?", "Salir ?", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+        
+       if (repuesta == 0)
+       {
+           dispose(); 
+       }
+      
+    }//GEN-LAST:event_SalirEscritorioMouseClicked
 
     /**
      * @param args the command line arguments
