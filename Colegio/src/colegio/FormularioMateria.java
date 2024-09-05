@@ -9,16 +9,11 @@ import javax.swing.JOptionPane;
  */
 public class FormularioMateria extends javax.swing.JInternalFrame {
 
-    public static HashSet<Materia> materias;
+    
     private Materia materia;
 
     public FormularioMateria() {
         initComponents();
-    }
-
-    public FormularioMateria(HashSet<Materia> mat) {
-        initComponents();
-        this.materias = mat;
     }
 
     public boolean chequeo() {
@@ -149,7 +144,7 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         if (!chequeo()) {
 
             materia = new Materia(Integer.parseInt(jTfcodMateria.getText()), jTFnombreMateria.getText(), Integer.parseInt(jTFanioMateria.getText()));
-            materias.add(materia);
+            Colegio1.materia.add(materia);
 
             JOptionPane.showMessageDialog(this, "La Materia fue agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } else {

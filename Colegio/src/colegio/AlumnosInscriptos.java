@@ -141,7 +141,7 @@ public class AlumnosInscriptos extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
     
     private void cargarCombo(){
-        for (Object aux : FormularioAlumno.alumno2) {
+        for (Object aux : Colegio1.alumno) {
             ComboAlumnosInscriptos.addItem((Alumno)aux);
         } 
     }

@@ -18,18 +18,12 @@ import javax.swing.JTextField;
  */
 public class FormularioAlumno extends javax.swing.JInternalFrame {
 
-    public static HashSet<Alumno> alumno2;
+   
 
     public FormularioAlumno() {
         initComponents();
 
     }
-
-    public FormularioAlumno(HashSet<Alumno> alumno2) {
-        initComponents();
-        this.alumno2 = alumno2;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -199,7 +193,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             try {
                 Integer legajo = Integer.parseInt(LegajoAlumno.getText());
                 Alumno a1 = new Alumno(legajo, ApellidoAlumno.getText(), NombreAlumno.getText());
-                alumno.add(a1);
+                Colegio1.alumno.add(a1);
                 JOptionPane.showMessageDialog(this, "El Alumno fue agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Datos Incorrectos");

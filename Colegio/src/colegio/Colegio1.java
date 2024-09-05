@@ -137,7 +137,7 @@ public class Colegio1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AlumnoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnoMenuActionPerformed
-        FormularioAlumno formA = new FormularioAlumno(alumno);
+        FormularioAlumno formA = new FormularioAlumno();
         Escritorio.add(formA);
         formA.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_AlumnoMenuActionPerformed
@@ -147,7 +147,7 @@ public class Colegio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirEscritorioActionPerformed
 
     private void MateriaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriaMenuActionPerformed
-        FormularioMateria formM = new FormularioMateria(materia);
+        FormularioMateria formM = new FormularioMateria();
         Escritorio.add(formM);
         formM.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_MateriaMenuActionPerformed

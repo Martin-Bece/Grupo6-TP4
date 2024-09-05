@@ -131,13 +131,13 @@ public class Registros extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbInscribirActionPerformed
 
     public void cargarComboMateria(){
-        for (Object aux : FormularioMateria.materias) {
+        for (Object aux : Colegio1.materia) {
             ComboMateria.addItem((Materia)aux);
         }
     }
     
     public void cargarComboAlumno(){
-        for (Object aux : FormularioAlumno.alumno2) {
+        for (Object aux : Colegio1.alumno) {
             ComboAlumno.addItem((Alumno)aux);
         }
     }
