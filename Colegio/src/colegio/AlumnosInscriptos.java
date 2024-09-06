@@ -141,14 +141,14 @@ public class AlumnosInscriptos extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
     
     private void cargarCombo(){
-        for (Object aux : Colegio1.alumno) {
+        for (Object aux : VistaPrincipal.alumno) {
             ComboAlumnosInscriptos.addItem((Alumno)aux);
         } 
     }
     
     private void cargarModelo(){
         model.addColumn("Código");
-        model.addColumn("Nombre");
+        model.addColumn("Materia");
         model.addColumn("Año");
         TablaInscriptos.setModel(model);
     }

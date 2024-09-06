@@ -5,7 +5,7 @@
  */
 package colegio;
 
-import static colegio.Colegio1.alumno;
+import static colegio.VistaPrincipal.alumno;
 import com.sun.xml.internal.bind.v2.model.core.Adapter;
 import java.awt.event.KeyAdapter;
 import java.util.HashSet;
@@ -190,17 +190,12 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
     private void GuardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarAlumnoActionPerformed
 
         if (!chequeo()) {
-            try {
                 Integer legajo = Integer.parseInt(LegajoAlumno.getText());
                 Alumno a1 = new Alumno(legajo, ApellidoAlumno.getText(), NombreAlumno.getText());
-                Colegio1.alumno.add(a1);
+                VistaPrincipal.alumno.add(a1);
                 JOptionPane.showMessageDialog(this, "El Alumno fue agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(this, "Datos Incorrectos");
-            }
         } else {
             JOptionPane.showMessageDialog(this, "Complete los campos ", "Advertencia", JOptionPane.WARNING_MESSAGE);
-
         }
 
     }//GEN-LAST:event_GuardarAlumnoActionPerformed

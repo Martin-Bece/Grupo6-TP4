@@ -9,12 +9,12 @@ import java.util.HashSet;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Colegio1 extends javax.swing.JFrame {
+public class VistaPrincipal extends javax.swing.JFrame {
 
     public static HashSet<Alumno> alumno = new HashSet<>();
     public static HashSet<Materia> materia = new HashSet<>();
 
-    public Colegio1() {
+    public VistaPrincipal() {
         initComponents();
     }
 
@@ -137,6 +137,7 @@ public class Colegio1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AlumnoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnoMenuActionPerformed
+        Escritorio.removeAll();
         FormularioAlumno formA = new FormularioAlumno();
         Escritorio.add(formA);
         formA.setVisible(rootPaneCheckingEnabled);
@@ -209,20 +210,21 @@ public class Colegio1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Colegio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Colegio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Colegio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Colegio1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Colegio1().setVisible(true);
+                new VistaPrincipal().setVisible(true);
             }
         });
     }

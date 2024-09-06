@@ -5,6 +5,8 @@
  */
 package colegio;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +22,11 @@ public class Registros extends javax.swing.JInternalFrame {
         initComponents();
         cargarComboMateria();
         cargarComboAlumno();
+        ComboAlumno.setSelectedItem(null);
+        ComboMateria.setSelectedItem(null);
+        jbInscribir.setEnabled(false);
+        ComboMateria.addActionListener(new ActivarBoton());
+        ComboAlumno.addActionListener(new ActivarBoton());
     }
 
     /**
@@ -117,7 +124,7 @@ public class Registros extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComboMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboMateriaActionPerformed
-        
+               
     }//GEN-LAST:event_ComboMateriaActionPerformed
 
     private void SalirInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirInscripcionActionPerformed
@@ -127,17 +134,28 @@ public class Registros extends javax.swing.JInternalFrame {
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
         Alumno alumnoInscripto = (Alumno)ComboAlumno.getSelectedItem();
         alumnoInscripto.agregarMateria((Materia)ComboMateria.getSelectedItem());
-        JOptionPane.showMessageDialog(this, "Se ha inscripto al alumno con exito", "Felcidades", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Se ha inscripto al alumno con exito", "Felicidades", JOptionPane.INFORMATION_MESSAGE);
+        
+        
     }//GEN-LAST:event_jbInscribirActionPerformed
 
+    private class ActivarBoton implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean MateriaActivo = ComboMateria.getSelectedIndex() != -1;
+            boolean AlumnoActivo = ComboAlumno.getSelectedIndex() != -1;
+            jbInscribir.setEnabled(MateriaActivo && AlumnoActivo);
+        }
+    }
+    
     public void cargarComboMateria(){
-        for (Object aux : Colegio1.materia) {
+        for (Object aux : VistaPrincipal.materia) {
             ComboMateria.addItem((Materia)aux);
         }
     }
     
     public void cargarComboAlumno(){
-        for (Object aux : Colegio1.alumno) {
+        for (Object aux : VistaPrincipal.alumno) {
             ComboAlumno.addItem((Alumno)aux);
         }
     }
